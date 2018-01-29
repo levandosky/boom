@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Route} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import Board from "./components/Board/Board";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
@@ -33,4 +33,4 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));

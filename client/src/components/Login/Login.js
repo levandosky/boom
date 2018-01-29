@@ -1,6 +1,6 @@
 import React from "react";
 import {Button, Form, Grid, Input, Segment} from "semantic-ui-react";
-import {Redirect} from "react-router-dom";
+
 
 class Login extends React.Component {
 
@@ -12,6 +12,7 @@ class Login extends React.Component {
         const {player} = this.state
         this.setState({submittedPlayer: player, userLogged: true})
 
+        this.props.history.push('/board');
     }
 
     render() {
@@ -41,7 +42,6 @@ class Login extends React.Component {
                             </Button>
 
                         </Form>
-                        {this.state.userLogged? (<Redirect to="/board"/>) : null}
                     </Grid.Column>
                 </Grid>
 
