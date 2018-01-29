@@ -1,15 +1,11 @@
 import React from "react";
-import playerAvatar from './playerAvatar.svg';
+import PlayerAvatar from "./PlayerAvatar";
 
 const playerContainer = {
     display: 'flex',
     flexDirection: 'column',
     margin: '5px',
     width: '110px'
-}
-
-const playerAvatarStyle = {
-    height: '30px'
 }
 
 const nameContainer = {
@@ -22,11 +18,11 @@ const nameContainer = {
 
 class Player extends React.Component {
     render() {
-        const { name } = this.props.player;
+        const {name, isActive} = this.props.player;
 
         return (
             <div style={playerContainer}>
-                <img src={playerAvatar} style={playerAvatarStyle} className="player-avatar" alt="player avatar" />
+                <PlayerAvatar isActive={isActive}/>
                 <div style={nameContainer}>
                     {name}
                 </div>
