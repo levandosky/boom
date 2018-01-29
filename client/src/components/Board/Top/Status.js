@@ -14,6 +14,20 @@ const content = {
     justifyContent: 'space-between'
 }
 
+const topContent = {
+    backgroundColor: '#D1D1D1',
+    color: '#898989',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around'
+}
+
+const bottomContent = {
+    backgroundColor: '#787878',
+    color: '#ffffff'
+}
+
 class Status extends React.Component {
 
     constructor(props) {
@@ -50,9 +64,11 @@ class Status extends React.Component {
         return (
             <div style={statusContainer}>
                 <div style={content}>
-                    <div>Kolej gracza</div>
-                    <div>{currentPlayer}</div>
-                    <div>Do końca tury {timeLimit.toLocaleString('en-US', {
+                    <div style={topContent}>
+                        <div>Kolej gracza</div>
+                        <div>{currentPlayer}</div>
+                    </div>
+                    <div style={bottomContent}>Do końca tury {timeLimit.toLocaleString('en-US', {
                         minimumIntegerDigits: 2,
                         useGrouping: false
                     })}s

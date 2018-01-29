@@ -4,7 +4,8 @@ import {connect} from 'react-redux'
 import Status from "./Status";
 
 const topContainer = {
-    display: 'flex'
+    display: 'flex',
+    backgroundColor: '#ECECEC'
 }
 
 class Top extends React.Component {
