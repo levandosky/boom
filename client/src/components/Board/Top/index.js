@@ -12,7 +12,7 @@ class Top extends React.Component {
         const { players } = this.props
         return (
             <div style={topContainer}>
-                {players.map(player => <Player player={player} />)}
+                {players.map(player => <Player player={player} key={player.name}/>)}
             </div>
         )
     }
