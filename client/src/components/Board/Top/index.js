@@ -13,7 +13,7 @@ class Top extends React.Component {
         const {players} = this.props
         return (
             <div style={topContainer}>
-                {players.map(player => <Player player={player} key={player.name}/>)}
+                {players ? players.map(player => <Player player={player} key={player.name}/>) : null}
                 <Status/>
             </div>
         )
@@ -22,7 +22,7 @@ class Top extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        players: [{name: 'PIK POK'}, {name: 'MAD HAMMMSTER'}]
+        players: state.players.list
     }
 }
 
