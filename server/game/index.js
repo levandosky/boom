@@ -1,12 +1,54 @@
 import uuid from 'uuid/v1';
 import {findKey, mapValues, values} from 'lodash';
 
+import {cards} from './cards';
+
 const gameObject = {
-  players: {}
+  players: {},
+  deck: []
 };
 
 
 class Game {
+  constructor() {
+    this.reloadDeck();
+  }
+
+  reloadDeck() {
+    gameObject.deck = cards;
+
+  }
+
+  getDeckSize() {
+    return gameObject.deck.length;
+  }
+
+  createPlayerDeck() {
+    const playerHand = [];
+    for(let i = 0; i < 4; i++) {
+      let cardIndex = Math.floor(Math.random() * this.getDeckSize());
+
+      let card = gameObject.deck[cardIndex];
+
+      if (card.Rodzaj === 'Eksplodujący kotek') {
+        card = gameObject.deck[Math.floor(Math.random() * this.getDeckSize())];
+      }
+
+      playerHand.push(Object.assign({}, card));
+      gameObject.deck.splice(cardIndex, 1);
+    }
+
+    playerHand.push({
+  		"Rodzaj": "Zielony Kot",
+  		"Opis": "Ktoto kot",
+  		"Akcja": "Anuluje wybuchającego złością kota",
+  		"AlternatywnyOpis": "Miki zmienia KPI",
+  		"id": "3030"
+  	});
+
+    return playerHand;
+  };
+
 
   addPlayer(newPlayer) {
     const playerId = findKey(gameObject.players, {name: newPlayer.name});
@@ -18,7 +60,8 @@ class Game {
       gameObject.players[id] = {
         sessionId: newPlayer.sessionId,
         name: newPlayer.name,
-        id: id
+        id: id,
+        hand: this.createPlayerDeck()
       }
     }
 
