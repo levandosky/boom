@@ -4,7 +4,7 @@ import {Button, Form, Grid, Input, Segment} from "semantic-ui-react";
 
 class Login extends React.Component {
 
-    state = {player: '', submittedPlayer: '', userLogged: false}
+    state = {player: '', submittedPlayer: ''}
 
     handleChange = (e, {name, value}) => this.setState({[name]: value})
 
