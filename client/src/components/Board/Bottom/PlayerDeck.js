@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux'
-import Card from "./Card";
+import Card from "../Middle/Card";
 
 class PlayerDeck extends React.Component {
 
@@ -8,7 +8,7 @@ class PlayerDeck extends React.Component {
         const {cards} = this.props
         return (
             <div>
-                {cards.map(card => <Card card={card} key={card.text}/>)}
+                {cards ? cards.map(card => <Card card={card} key={card.text} />) : null}
             </div>
         )
     }
@@ -16,7 +16,7 @@ class PlayerDeck extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        cards: [{text: 'AS'}, {text: 'JOKER'}]
+        cards: state.user.hand
     }
 }
 

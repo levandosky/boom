@@ -3,11 +3,12 @@ import React from 'react';
 class Card extends React.Component {
 
     render() {
+        const {type, description} = this.props.card
         return (
             <div className="card">
-                <div className="container-card-type">{this.props.type}</div>
+                <div className="container-card-type">{type}</div>
 
-                <div className="container-card-description">{this.props.description}</div>
+                <div className="container-card-description">{description}</div>
 
             </div>
         )

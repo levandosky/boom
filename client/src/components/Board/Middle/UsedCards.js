@@ -52,8 +52,7 @@ class UsedCards extends React.Component {
                                                 }}
                                             >
                                                 <Card
-                                                    type={data.type}
-                                                    description={data.description}
+                                                    card={{type: data.type, description: data.description}}
                                                 />
                                             </div>
                                         ))}
