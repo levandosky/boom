@@ -20,6 +20,11 @@ const usersActions = {
         list: Game.getPlayers()
       }
     });
+
+    all.emit('action', {
+      type: 'SET_DECK_SIZE',
+      payload: Game.getDeckSize()
+    })
   }
 }
 
