@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {Route} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import Board from "./components/Board/Board";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
@@ -15,10 +15,6 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <p className="App-intro">
-                    USER: {this.props.user && this.props.user.currentUser}
-                </p>
-
                 <Route
                     exact
                     path={'/board'}
@@ -32,7 +28,6 @@ class App extends Component {
                     component={Login}
                 >
                 </Route>
-
             </div>
         );
     }
@@ -48,4 +43,4 @@ const mapDispatchToProps = {
   getUser
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

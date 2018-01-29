@@ -1,17 +1,15 @@
 import React from "react";
+import Top from "./Top"
 
 class Board extends React.Component {
 
 
-    render(){
-        const t = this.props.t;
-
-        return(
+    render() {
+        return (
             <div>
                 <div className="Board">
-                    <h1>Board</h1>
+                    <Top/>
                 </div>
-
             </div>
         )
     }
