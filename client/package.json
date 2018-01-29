@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "d3-ease": "^1.0.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-move": "^2.6.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.0",
@@ -12,9 +14,9 @@
     "redux-actions": "^2.2.1",
     "redux-socket.io": "^1.4.0",
     "redux-thunk": "^2.2.0",
-    "socket.io-client": "^2.0.4",
     "semantic-ui-css": "^2.2.14",
-    "semantic-ui-react": "^0.77.2"
+    "semantic-ui-react": "^0.77.2",
+    "socket.io-client": "^2.0.4"
   },
   "scripts": {
     "start": "react-scripts start",
