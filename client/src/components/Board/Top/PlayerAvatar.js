@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 const fillColor = {
-    active: 'rgb(153,0,0)',
+    active: 'rgb(255,128,0)',
     notActive: 'rgb(132,132,132)'
 }
 
