@@ -4,8 +4,6 @@ class Board extends React.Component {
 
 
     render(){
-        const t = this.props.t;
-
         return(
             <div>
                 <div className="Board">
