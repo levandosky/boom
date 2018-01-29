@@ -1,10 +1,10 @@
 import {createAction, handleActions} from 'redux-actions';
 
 const SET_USER = 'SET_USER';
-const SERVER_GET_USER = 'SERVER/GET_USER';
+const SERVER_LOGIN = 'SERVER/LOGIN';
 
 export const setUser = createAction(SET_USER);
-export const serverGetUser = createAction(SERVER_GET_USER);
+export const serverLogin = createAction(SERVER_LOGIN);
 
 
 const initialState = {

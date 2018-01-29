@@ -1,5 +1,8 @@
 import React from "react";
+import {connect} from 'react-redux';
 import {Button, Form, Grid, Input, Segment} from "semantic-ui-react";
+
+import {serverLogin} from '../../reducers/UserReducer';
 
 
 class Login extends React.Component {
@@ -10,8 +13,7 @@ class Login extends React.Component {
 
     handleSubmit = () => {
         const {player} = this.state
-        this.setState({submittedPlayer: player, userLogged: true})
-
+        this.props.serverLogin(player);
         this.props.history.push('/board');
     }
 
@@ -52,4 +54,14 @@ class Login extends React.Component {
 
 }
 
-export default Login;
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  }
+};
+
+const mapDispatchToProps = {
+  serverLogin
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
