@@ -9,7 +9,7 @@ class OtherCards extends React.Component {
                 <div className="wrapper-other-cards">
                     <div className="other-cards">
                         <Card
-                            card={{type:'attack', description: null}}
+                            card={{type:'back', description: null}}
                         />
                     </div>
                     <div className="container-others-cards-text">

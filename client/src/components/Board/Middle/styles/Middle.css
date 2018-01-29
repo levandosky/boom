@@ -50,7 +50,7 @@
     height: 100%;
     width: calc(50vh * 0.55);
     border-radius: 5px;
-    border: solid 1px;
+    border: solid 0px;
     position: relative;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.35);
 }
@@ -68,6 +68,50 @@
 .card.explosion{
     background: #666;
     border-color: #111;
+}
+
+.card.back{
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #2b2b2b;
+    border-color: unset;
+    background-size: 80%;
+    background-position: 36% 50%;
+    background-repeat: no-repeat;
+    transition: all .3s;
+    top:0;
+    position: absolute;
+    background-image: url("../images/EP_logo.png");
+
+    /*box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);*/
+}
+
+.card.back:hover {
+    top: -15px;
+    background-position: 36% 40%;
+    /*box-shadow: 0px 0px 15px 3px rgba(0,0,0,0.85);*/
+}
+
+.card.back .container-card-type{
+    display: none;
+}
+
+.card.back .container-card-description:after{
+    content: 'DOBIERZ KARTĘ';
+    font-family: 'Anton', sans-serif;
+    font-size: 2vh;
+    line-height: 2vh;
+    top: 20px;
+    left: 28%;
+    position: absolute;
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #ff9b05;
+    transition: all .5s;
+}
+
+.card.back:hover .container-card-description:after{
+    top: -80px;
 }
 
 .container-card-type{
