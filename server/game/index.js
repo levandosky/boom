@@ -1,5 +1,5 @@
 import uuid from 'uuid/v1';
-import {findKey, values} from 'lodash';
+import {findKey, mapValues, values} from 'lodash';
 
 const gameObject = {
   players: {}
@@ -9,27 +9,27 @@ const gameObject = {
 class Game {
 
   addPlayer(newPlayer) {
+    const playerId = findKey(gameObject.players, {name: newPlayer.name});
+    const id = playerId || uuid();
 
-    console.log(gameObject.players);
-
-    const player = findKey(gameObject.players, {name: newPlayer.name});
-
-    console.log(player);
-
-    if (player) {
-      player.sessionId = newPlayer.sessionId
+    if (playerId) {
+      gameObject.players[id].sessionId = newPlayer.sessionId
     } else {
-      const id = uuid();
       gameObject.players[id] = {
         sessionId: newPlayer.sessionId,
         name: newPlayer.name,
         id: id
       }
     }
+
+    return gameObject.players[id];
   }
 
   getPlayers() {
-    return values(gameObject.players);
+    return values(mapValues(gameObject.players, (player) => {
+      const {id, name} = player
+      return {id, name};
+    }));
   }
 }
 

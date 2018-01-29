@@ -7,9 +7,7 @@ export const setUser = createAction(SET_USER);
 export const serverLogin = createAction(SERVER_LOGIN);
 
 
-const initialState = {
-    currentUser: 'test'
-}
+const initialState = {}
 
 
 export default handleActions({
