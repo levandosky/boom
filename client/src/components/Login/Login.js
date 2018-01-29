@@ -7,7 +7,7 @@ import {serverLogin} from '../../reducers/UserReducer';
 
 class Login extends React.Component {
 
-    state = {player: '', submittedPlayer: '', userLogged: false}
+    state = {player: '', submittedPlayer: ''}
 
     handleChange = (e, {name, value}) => this.setState({[name]: value})
 

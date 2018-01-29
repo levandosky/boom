@@ -9,12 +9,15 @@ const playerContainer = {
 }
 
 const playerAvatarStyle = {
-    height: '20px'
+    height: '30px'
 }
 
 const nameContainer = {
-    height: '2em',
-    textAlign: 'center'
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    height: '38px'
 }
 
 class Player extends React.Component {
