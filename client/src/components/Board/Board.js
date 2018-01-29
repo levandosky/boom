@@ -2,7 +2,7 @@ import React from "react";
 import Top from "./Top"
 import Bottom from "./Bottom"
 import Middle from "./Middle/Middle";
-
+import './Middle/styles/Middle.css';
 class Board extends React.Component {
 
 

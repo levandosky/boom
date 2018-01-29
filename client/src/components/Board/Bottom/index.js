@@ -5,6 +5,7 @@ import ActionPanel from "./ActionPanel";
 
 const bottomContainer = {
     width: '100%',
+    height: '35vh',
     background: '#ECECEC'
 }
 
