@@ -1,11 +1,24 @@
-const app = require('express')();
-const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
-io.on('connection', (socket) => {
-    console.log('Client connected');
-    socket.emit('hello', {test: 'test'});
+server.listen(9999);
+
+app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
 });
 
+io.on('connection', function (socket) {
+  console.log('Socket connected:', socket.id);
 
-app.listen(9999);
+  //socket.emit('action', { type: 'SET_USER', payload: {currentUser: 'lewy'} });
+
+  socket.on('action', (action) => {
+    console.log("Get new server action");
+
+    if(action.type === 'SERVER/GET_USER') {
+      socket.emit('action', { type: 'SET_USER', payload: {currentUser: 'dupa'} });
+    }
+
+  })
+});

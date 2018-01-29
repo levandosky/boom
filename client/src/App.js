@@ -4,8 +4,14 @@ import {Route, withRouter} from "react-router-dom";
 import Board from "./components/Board/Board";
 import Login from "./components/Login/Login";
 import {connect} from "react-redux";
+import {getUser} from './services/userService';
 
 class App extends Component {
+
+    componentDidMount() {
+      this.props.getUser();
+    }
+
     render() {
         return (
             <div className="App">
@@ -33,4 +39,8 @@ const mapStateToProps = (state) => {
     };
 }
 
-export default withRouter(connect(mapStateToProps)(App));
+const mapDispatchToProps = {
+  getUser
+}
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
