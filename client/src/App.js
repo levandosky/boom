@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {connect} from "react-redux";
 
 class App extends Component {
   render() {
@@ -12,10 +13,18 @@ class App extends Component {
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
+
+            USER: {this.props.user && this.props.user.currentUser}
         </p>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+    return {
+        user: state.user
+    };
+}
+
+export default connect(mapStateToProps)(App);
