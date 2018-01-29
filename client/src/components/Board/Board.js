@@ -1,5 +1,6 @@
 import React from "react";
 import Top from "./Top"
+import Bottom from "./Bottom"
 
 class Board extends React.Component {
 
@@ -9,6 +10,7 @@ class Board extends React.Component {
             <div>
                 <div className="Board">
                     <Top/>
+                    <Bottom/>
                 </div>
             </div>
         )
