@@ -7,6 +7,9 @@ import {easeBackOut} from 'd3-ease';
 
 class UsedCards extends React.Component {
 
+    getAngle = () => {
+        return Math.floor(Math.random() * (20 - 0 )) -10
+    }
     render() {
         const width = 400;
         return (
@@ -22,14 +25,16 @@ class UsedCards extends React.Component {
                             () => ({
                                 x: -500,
                                 opacity: 0,
+
                             })
                         }
 
                         enter={
                             () => ([
                                 {
-                                    x: [width * 0.1],
+                                    x: [width * 0.3],
                                     opacity: [1],
+                                    rotate: this.getAngle(),
                                     timing: {delay: 500, duration: 500, ease: easeBackOut},
                                 }
                             ])}
@@ -40,13 +45,14 @@ class UsedCards extends React.Component {
                             return (
                                 <div className='container-animations-cards'>
                                     {nodes.map(
-                                        ({key, state: {x, opacity, color}, data}) => (
+                                        ({key, state: {x, opacity, color, rotate}, data}) => (
                                             <div
                                                 className='container-card'
                                                 key={key}
                                                 style={{
                                                     position: 'absolute',
-                                                    transform: `translate(${x}px)`,
+                                                    transform: `translate(${x}px) rotate(${rotate}deg)`,
+
                                                     opacity,
                                                     color,
                                                 }}
@@ -74,7 +80,7 @@ const mapStateToProps = (state) => ({
 function mapDispatchToProps(dispatch) {
     return {
         clickAddCard: () => {
-            dispatch(addCard({type: 'test', id: Math.random()}));
+            dispatch(addCard({type: 'explosion', id: Math.random()}));
         }
     }
 }
