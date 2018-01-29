@@ -9,12 +9,12 @@ import {getUser} from './services/userService';
 class App extends Component {
 
     componentDidMount() {
-      this.props.getUser();
+        this.props.getUser();
     }
 
     render() {
         return (
-            <div className="App">
+            <div className="App" style={{backgroundColor: '#F8F8F8', height: '100%'}}>
                 <Route
                     exact
                     path={'/board'}
@@ -40,7 +40,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = {
-  getUser
+    getUser
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
