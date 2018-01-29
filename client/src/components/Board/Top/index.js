@@ -6,6 +6,7 @@ import Status from "./Status";
 const topContainer = {
     display: 'flex',
     height: '15vh',
+    position: 'relative',
     backgroundColor: '#ECECEC'
 }
 

@@ -10,9 +10,22 @@
 }
 
 .container-used-cards, .container-others-cards, .container-chat {
-    width: 30%;
+
+    background-color: #eee;
     margin: 20px;
     position: relative;
+}
+
+.container-used-cards{
+    width: 25%;
+}
+
+.container-others-cards{
+    width: 40%;
+}
+
+.container-chat{
+    width: 20%;
 }
 
 .used-cards, .other-cards, .chat {
@@ -28,9 +41,9 @@
 }
 
 .container-card{
-    height: 80%;
+    height: 100%;
     width: 80%;
-    margin-top: 2vh;
+
 }
 
 .card{
@@ -69,4 +82,45 @@
     width: 100%;
     bottom: 15px;
     text-align: center;
+}
+
+/*OTHER CARDS*/
+
+.container-others-cards{
+    color: #333;
+    display: flex;
+
+}
+
+.wrapper-other-cards{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.other-cards{
+    position: relative;
+    width: 50%;
+    height: 40vh;
+}
+
+.other-cards-first-slogan, .other-cards-second-slogan{
+    font-family: 'Oswald', sans-serif;
+}
+
+.other-cards-first-slogan{
+    font-size: 3vh;
+    line-height: 3vh;
+}
+
+.other-cards-number{
+    font-size: 23vh;
+    line-height: 20vh;
+    font-family: 'Anton', sans-serif;
+}
+
+.other-cards-second-slogan{
+    line-height: 8.5vh;
+    font-size: 12vh;
 }

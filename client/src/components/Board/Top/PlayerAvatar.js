@@ -9,7 +9,7 @@ class PlayerAvatar extends Component {
 
     render() {
         return (
-            <svg width="100%" height="30px" viewBox="0 0 67 113">
+            <svg width="7vh" height="100%" viewBox="0 0 67 113">
                 <g transform="matrix(1,0,0,1,-4121.05,-509.772)">
                     <g transform="matrix(0.755482,0,0,0.755482,3330.44,-84.5014)">
                         <g transform="matrix(1,0,0,1,-100.355,28.9817)" style={this.getFillColor()}>

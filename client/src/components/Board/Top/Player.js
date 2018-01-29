@@ -3,17 +3,31 @@ import PlayerAvatar from "./PlayerAvatar";
 
 const playerContainer = {
     display: 'flex',
-    flexDirection: 'column',
+    flexDirection: 'row',
+    alignItems: 'flex-end',
     margin: '5px',
-    width: '110px'
+    marginRight: '30px'
 }
 
 const nameContainer = {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    textAlign: 'center',
-    height: '38px'
+    flexDirection: 'column',
+    alignItems: 'bottom',
+    justifyContent: 'flex-end',
+    textAlign: 'left',
+    height: '90%',
+    textTransform: 'uppercase',
+    marginLeft: '10px',
+    marginBottom: '8px',
+    fontFamily: 'Oswald',
+    fontSize: '4vh',
+    lineHeight: '3vh',
+    color: '#333'
+}
+
+const playerCardNumberStyles = {
+    fontSize: '2vh',
+    whiteSpace: 'nowrap'
 }
 
 class Player extends React.Component {
@@ -24,7 +38,12 @@ class Player extends React.Component {
             <div style={playerContainer}>
                 <PlayerAvatar isActive={isActive}/>
                 <div style={nameContainer}>
-                    {name}
+                    <div className="player-name">
+                        {name}
+                    </div>
+                    <div className="player-cards-number" style={playerCardNumberStyles}>
+                        LICZBA KART: 6
+                    </div>
                 </div>
             </div>
         )
