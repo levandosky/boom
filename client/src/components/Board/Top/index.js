@@ -22,7 +22,7 @@ class Top extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        players: [{name: 'PIK POK'}, {name: 'MAD HAMMMSTER'}]
+        players: [{name: 'PIK POK', isActive: true}, {name: 'MAD HAMMMSTER'}]
     }
 }
 
