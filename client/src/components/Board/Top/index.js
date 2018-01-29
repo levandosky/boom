@@ -1,6 +1,7 @@
 import React from "react";
 import Player from "./Player"
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
+import Status from "./Status";
 
 const topContainer = {
     display: 'flex'
@@ -9,10 +10,11 @@ const topContainer = {
 class Top extends React.Component {
 
     render() {
-        const { players } = this.props
+        const {players} = this.props
         return (
             <div style={topContainer}>
                 {players.map(player => <Player player={player} key={player.name}/>)}
+                <Status/>
             </div>
         )
     }
@@ -20,7 +22,7 @@ class Top extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        players: [{ name: 'PIK POK' }, { name: 'MAD HAMMMSTER' }]
+        players: [{name: 'PIK POK'}, {name: 'MAD HAMMMSTER'}]
     }
 }
 

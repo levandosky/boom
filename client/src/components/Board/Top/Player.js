@@ -4,7 +4,7 @@ import playerAvatar from './playerAvatar.svg';
 const playerContainer = {
     display: 'flex',
     flexDirection: 'column',
-    padding: '5px',
+    margin: '5px',
     width: '110px'
 }
 
