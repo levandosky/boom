@@ -32,7 +32,7 @@ const playerCardNumberStyles = {
 
 class Player extends React.Component {
     render() {
-        const {name, isActive} = this.props.player;
+        const {name, isActive, numberOfCards} = this.props.player;
 
         return (
             <div style={playerContainer}>
@@ -42,7 +42,7 @@ class Player extends React.Component {
                         {name}
                     </div>
                     <div className="player-cards-number" style={playerCardNumberStyles}>
-                        LICZBA KART: 6
+                        LICZBA KART: {numberOfCards}
                     </div>
                 </div>
             </div>

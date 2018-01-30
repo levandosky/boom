@@ -1,5 +1,7 @@
 import React from 'react';
 import Card from "./Card";
+import {connect} from "react-redux";
+import {serverGetCard} from "../../../reducers/UserReducer";
 
 class OtherCards extends React.Component {
 
@@ -7,9 +9,15 @@ class OtherCards extends React.Component {
         return (
             <div className="container-others-cards">
                 <div className="wrapper-other-cards">
-                    <div className="other-cards">
+                    <div
+                        className="other-cards"
+                        onClick={() => {
+                            console.log('get card client')
+                            this.props.serverGetCard();
+                        }}
+                    >
                         <Card
-                            card={{type:'back', description: null}}
+                            card={{type: 'back', description: null}}
                         />
                     </div>
                     <div className="container-others-cards-text">
@@ -29,5 +37,8 @@ class OtherCards extends React.Component {
     }
 }
 
+const mapDispatchToProps = {
+    serverGetCard
+}
 
-export default OtherCards;
+export default connect(null, mapDispatchToProps)(OtherCards);
