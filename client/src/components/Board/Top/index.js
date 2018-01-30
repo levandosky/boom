@@ -3,6 +3,8 @@ import Player from "./Player"
 import {connect} from 'react-redux'
 import Status from "./Status";
 import {serverLogin} from "../../../reducers/UserReducer";
+import './topStyles.css'
+
 
 const topContainer = {
     display: 'flex',
@@ -23,7 +25,7 @@ class Top extends React.Component {
     render() {
         const {players} = this.props
         return (
-            <div style={topContainer}>
+            <div className='top-container' style={topContainer}>
                 {players ? players.map(player => <Player player={player} key={player.name}/>) : null}
                 <Status/>
             </div>

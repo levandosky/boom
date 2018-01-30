@@ -2,6 +2,8 @@ import React from "react";
 import {connect} from 'react-redux';
 import {Button, Form, Grid, Input, Segment} from "semantic-ui-react";
 
+import './LoginStyles.css';
+
 import {serverLogin} from '../../reducers/UserReducer';
 
 
@@ -26,14 +28,17 @@ class Login extends React.Component {
 
                 <Grid centered columns={3} verticalAlign='middle' style={{height: '100%'}}>
                     <Grid.Column>
+                        <div className="login-logo">
+
+                        </div>
                         <Form
-                            size='mini'
+                            size='small'
                             onSubmit={this.handleSubmit}
                         >
                             <Form.Field>
-                                <label>Player</label>
+                                <label>Nazwa gracza</label>
                                 <Input
-                                    placeholder='Player'
+                                    placeholder='Nazwa gracza'
                                     name='player'
                                     value={player}
                                     onChange={this.handleChange}/>
@@ -41,7 +46,7 @@ class Login extends React.Component {
                             <Button
                                 type='submit'
                             >
-                                Login
+                                Zaloguj
                             </Button>
 
                         </Form>
