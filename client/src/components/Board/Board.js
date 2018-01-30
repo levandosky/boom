@@ -3,6 +3,8 @@ import Top from "./Top"
 import Bottom from "./Bottom"
 import Middle from "./Middle/Middle";
 import './Middle/styles/Middle.css';
+import StartModal from "./StartModal";
+
 class Board extends React.Component {
 
 
@@ -13,6 +15,7 @@ class Board extends React.Component {
                     <Top/>
                     <Middle/>
                     <Bottom/>
+                    <StartModal />
                 </div>
             </div>
         )
