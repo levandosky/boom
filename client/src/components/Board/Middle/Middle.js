@@ -1,7 +1,7 @@
 import React from 'react';
 import UsedCards from "./UsedCards";
 import OtherCards from "./OtherCards";
-import Chat from "./Chat";
+import ActionPanel from "./ActionPanel";
 
 class Middle extends React.Component {
 
@@ -10,7 +10,7 @@ class Middle extends React.Component {
             <div className="container-middle">
                 <UsedCards/>
                 <OtherCards/>
-                <Chat/>
+                <ActionPanel/>
             </div>
         )
     }
