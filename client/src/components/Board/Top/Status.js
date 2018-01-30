@@ -83,15 +83,24 @@ class Status extends React.Component {
         this.setState({timeLimit: this.initialTimeLimit})
     }
 
+    findActiveUser = (user) => {
+        return user.isActive;
+    }
+
     render() {
-        const {currentPlayer} = this.props
+        const {players} = this.props;
+        let currentPlayerName = null;
+
+        if(players.length > 0) {
+            currentPlayerName = players.filter(this.findActiveUser)[0].name;
+        }
         const {timeLimit} = this.state
         return (
             <div style={statusContainer}>
                 <div style={content}>
                     <div style={topContent}>
                         <div >Kolej gracza</div>
-                        <div style={userStyles}>{currentPlayer}</div>
+                        <div style={userStyles}>{currentPlayerName}</div>
                     </div>
                     <div style={bottomContent}>Do końca tury <span className="time" style={timeStyles}>{timeLimit.toLocaleString('en-US', {
                         minimumIntegerDigits: 2,
@@ -106,7 +115,7 @@ class Status extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        currentPlayer: 'PIK POK'
+        players: state.players.list
     }
 }
 

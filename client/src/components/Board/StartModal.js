@@ -9,7 +9,7 @@ class StartModal extends React.Component {
         let visible = true;
 
         console.log('players ' + this.props.players);
-        if (this.props.players && this.props.players.length === 2) {
+        if (this.props.players && this.props.players.length >= 2) {
             visible = false;
         }
 
