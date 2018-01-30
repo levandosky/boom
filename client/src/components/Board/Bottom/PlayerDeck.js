@@ -5,6 +5,11 @@ import BottomCard from "./BottomCard";
 
 class PlayerDeck extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {selectedIds: []}
+    }
+
     render() {
         const {cards} = this.props
         console.log(cards);
@@ -17,10 +22,23 @@ class PlayerDeck extends React.Component {
         )
     }
 
-    mapCards = (card) => <BottomCard card={card} key={card.id} selectPlayerCard={this.selectPlayerCard}/>
+    mapCards = (card) => <BottomCard card={card} key={card.id} selectCardId={this.selectCardId}/>
 
-    // selectPlayerCard = (cardId) = {
-    // }
+    selectCardId = (cardId, isSelected) => {
+        this.setState((prevState) => {
+            let selectedIds = prevState.selectedIds.slice();
+
+            if (isSelected) {
+                selectedIds = prevState.selectedIds.filter((e) => ![cardId].includes(e))
+            }else{
+                selectedIds.push(cardId);
+            }
+
+            return {selectedIds};
+
+        })
+        console.log(this.state.selectedIds)
+    }
 }
 
 const mapStateToProps = state => {

@@ -20,11 +20,12 @@ class BottomCard extends React.Component {
     }
 
     selectCard = () => {
-        this.isValid() ?
+        // this.isValid() ?
+            this.props.selectCardId(this.props.card.id, this.state.isSelected, this.props.card.type)
             this.setState((prevState) => {
                 return {isSelected: !prevState.isSelected}
             })
-            : null
+            // : null
     }
 
 }

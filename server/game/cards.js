@@ -90,10 +90,10 @@ export const cards = [
     {
         "category": "Przysługa",
         "type": "favor",
-        "description": "Poproś kogoś",
-        "action": " żeby umył włosy",
-        "joke": " które rosną Ci na plecach",
-        "id": "Jeden z graczy musi Ci oddać wybraną przez siebie kartę"
+        "description": "Poproś kogoś żeby umył włosy które rosną Ci na plecach",
+        "action": "Jeden z graczy musi Ci oddać wybraną przez siebie kartę",
+        "joke": "",
+        "id": "17"
     },
     {
         "category": "Przysługa",
