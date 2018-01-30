@@ -39,12 +39,13 @@ class Game {
     }
 
     playerHand.push({
-  		"Rodzaj": "Zielony Kot",
-  		"Opis": "Ktoto kot",
-  		"Akcja": "Anuluje wybuchającego złością kota",
-  		"AlternatywnyOpis": "Miki zmienia KPI",
-  		"id": "3030"
-  	});
+        "category": "Rozbrój",
+        "type": "disarm",
+        "description": "Kocią jogą ",
+        "action": "Umieść ostatnio wyciągniętą kartę z powrotem w talii",
+        "joke": " ",
+        "id": "51"
+    });
 
     return playerHand;
   };

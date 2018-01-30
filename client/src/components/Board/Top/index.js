@@ -2,6 +2,7 @@ import React from "react";
 import Player from "./Player"
 import {connect} from 'react-redux'
 import Status from "./Status";
+import {serverLogin} from "../../../reducers/UserReducer";
 
 const topContainer = {
     display: 'flex',
@@ -11,7 +12,14 @@ const topContainer = {
 }
 
 class Top extends React.Component {
+    componentDidMount(){
+        if(!(this.props.user && this.props.user.logged)){
+            const playerName = localStorage['playerName'];
+            console.log('user '+playerName+' not logged');
+            this.props.serverLogin(playerName);
+        }
 
+    }
     render() {
         const {players} = this.props
         return (
@@ -25,8 +33,14 @@ class Top extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        players: state.players.list
+        players: state.players.list,
+        user: state.user
     }
 }
 
-export default connect(mapStateToProps)(Top);
+
+const mapDispatchToProps = {
+    serverLogin
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Top);

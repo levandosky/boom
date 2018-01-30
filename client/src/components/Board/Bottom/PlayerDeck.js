@@ -6,6 +6,7 @@ class PlayerDeck extends React.Component {
 
     render() {
         const {cards} = this.props
+        console.log(cards);
         return (
             <div>
                 {cards ? cards.map(card => <Card card={card} key={card.text} />) : null}

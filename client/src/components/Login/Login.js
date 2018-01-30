@@ -14,6 +14,7 @@ class Login extends React.Component {
     handleSubmit = () => {
         const {player} = this.state
         this.props.serverLogin(player);
+        localStorage.setItem('playerName', player);
         this.props.history.push('/board');
     }
 

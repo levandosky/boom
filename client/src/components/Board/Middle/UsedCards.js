@@ -41,7 +41,7 @@ class UsedCards extends React.Component {
 
                     >
                         {(nodes) => {
-                            console.log(nodes);
+                            // console.log(nodes);
                             return (
                                 <div className='container-animations-cards'>
                                     {nodes.map(
