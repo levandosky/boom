@@ -9,6 +9,13 @@ class OtherCards extends React.Component {
         super(props)
     }
 
+    addLeadingZero(deckSize){
+        if(deckSize<10){
+            deckSize = '0'+deckSize;
+        }
+        return deckSize;
+    }
+
     render() {
         const {deckSize} = this.props
         return (
@@ -30,7 +37,7 @@ class OtherCards extends React.Component {
                             W TALII POZOSTAŁO
                         </div>
                         <div className="other-cards-number">
-                            {deckSize}
+                            {this.addLeadingZero(deckSize)}
                         </div>
                         <div className="other-cards-second-slogan">
                             KART

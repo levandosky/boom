@@ -65,34 +65,73 @@
 .card.stop{
     color: #700315;
 }
+.card.stop .container-card-id{
+    background-color: #700315;
+}
 
 .card.attack{
     color: #ffb812;
+}
+
+.card.attack .container-card-id{
+    background-color: #ffb812;
 }
 
 .card.preview{
     color: #ff41eb;
 }
 
+.card.preview .container-card-id{
+    background-color: #ff41eb;
+}
+
 .card.favor{
     color: #144042;
+}
+
+.card.favor .container-card-id{
+    background-color: #144042;
 }
 
 .card.shuffle{
     color: #ad8254;
 }
 
+.card.shuffle .container-card-id{
+    background-color: #ad8254;
+}
+
 .card.skip{
     color: #2cacff
+}
+
+.card.skip .container-card-id{
+    background-color: #2cacff;
 }
 
 .card.disarm{
     color: #5aff29;
 }
 
+.card.disarm .container-card-id{
+    background-color: #5aff29;
+}
+
+.card.special{
+    color: #666;
+}
+
+.card.special .container-card-id{
+    background-color: #666;
+}
+
 .card.explosion{
     background: #666;
     border-color: #111;
+}
+
+.card.explosion .container-card-id{
+    background-color: #111;
 }
 
 .card.back{
@@ -140,11 +179,25 @@
     top: -60px;
 }
 
+.container-card-id{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+    font-family: Oswald;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 50%;
+}
+
 .container-card-category{
     position: absolute;
-    width: 100%;
+    width: 70%;
+    left: 10%;
     top: 5px;
-    text-align: center;
 }
 
 .container-card-action{
