@@ -12,10 +12,7 @@ export const setSelectedCardId = createAction(SET_SELECTED_CARD_ID );
 export const cardPlayedAction = createAction(CARD_PLAYED);
 
 const initialState = {
-    usedCards: [
-        {type: 'attack', id: 1, description: 'A zajebać Ci'},
-        {type: 'shuffle', id: 11, description: 'A zajebać Ci'}
-    ],
+    usedCards: [],
     selectedCardId: 1
 }
 

@@ -13,7 +13,7 @@ class BottomCard extends React.Component {
         const {card} = this.props
         const {isSelected} = this.state
         return (
-            <div className={`bottomCardContainer${isSelected ? ' selected' : ''}`} onClick={this.selectCard}>
+            <div className={`bottomCardContainer ${isSelected ? ' selected' : ''}`} onClick={this.selectCard}>
                 <Card card={card}/>
             </div>
         )

@@ -4,8 +4,34 @@
     overflow-x: auto;
 }
 
+.bottomCardContainer{
+    padding: 20px;
+}
+
+.bottomCardContainer .card{
+    width: calc(35vh * 0.55);
+}
+
+.bottomCardContainer .container-card-description{
+    font-size: 1.7vh;
+    line-height: 2vh;
+    padding: 20px;
+    bottom: 15px;
+}
+
+.bottomCardContainer .container-card-action{
+    font-size: 1.3vh;
+    line-height: 1.5vh;
+    padding: 20px;
+}
+
+.bottomCardContainer .container-card-category{
+    font-size: 1.7vh;
+}
+
 .bottomCardContainer.selected {
     margin-bottom: 15px;
+
 }
 
 * {
