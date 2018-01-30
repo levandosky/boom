@@ -33,6 +33,7 @@ export const cards = [
     },
     {
         "category": "NieNieNie",
+        "type": "stop",
         "description": "Do pokoju wbiega Daniel",
         "action": "Przerwij akcję innego gracza. Możesz użyć tej karty w dowolnym momencie",
         "joke": " ",

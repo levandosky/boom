@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux'
 import Card from "../Middle/Card";
+import './Bottom.css'
 
 class PlayerDeck extends React.Component {
 
@@ -8,11 +9,18 @@ class PlayerDeck extends React.Component {
         const {cards} = this.props
         console.log(cards);
         return (
-            <div>
-                {cards ? cards.map(card => <Card card={card} key={card.text} />) : null}
+            <div className='playerDeckContainer'>
+                {
+                    cards ? cards.map(card => this.mapCards(card)) : null
+                }
             </div>
         )
     }
+
+    mapCards = (card) =>
+        <div className='bottomCardContainer' key={card.id}>
+            <Card card={card}/>
+        </div>
 }
 
 const mapStateToProps = state => {

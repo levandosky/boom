@@ -15,7 +15,7 @@ class Bottom extends React.Component {
         return (
             <div style={bottomContainer}>
                 <PlayerDeck />
-                <ActionPanel />
+                {/*<ActionPanel />*/}
             </div>
         )
     }

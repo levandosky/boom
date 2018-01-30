@@ -1,0 +1,5 @@
+.playerDeckContainer {
+    height: 100%;
+    display: flex;
+    overflow-x: auto;
+}
