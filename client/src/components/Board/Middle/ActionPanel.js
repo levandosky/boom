@@ -6,7 +6,7 @@ class ActionPanel extends React.Component {
         return (
             <div className="container-action-panel active">
                 <div className="action-panel">
-                    <div className="action-panel-button make-action">
+                    <div className="action-panel-button play-card">
                         Zagraj kartę
                     </div>
                     <div className="action-panel-button  end-turn">
