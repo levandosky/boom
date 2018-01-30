@@ -93,7 +93,7 @@ class Game {
     playCard(user, cardId) {
         const player = this.getPlayer(user);
         const cardIndex = findIndex(player.hand, {id: cardId});
-        return player.hand.slice(cardIndex, 1)
+        return player.hand.splice(cardIndex, 1)
     }
 }
 

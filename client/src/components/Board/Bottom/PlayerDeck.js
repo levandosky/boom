@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from 'react-redux'
 import './Bottom.css'
 import BottomCard from "./BottomCard";
+import {setSelectedCardId} from "../../../reducers/GameReducer";
 
 class PlayerDeck extends React.Component {
 
@@ -30,15 +31,20 @@ class PlayerDeck extends React.Component {
 
             if (isSelected) {
                 selectedIds = prevState.selectedIds.filter((e) => ![cardId].includes(e))
+                this.props.setSelectedCardId(null);
             }else{
                 selectedIds.push(cardId);
+                this.props.setSelectedCardId(cardId);
             }
 
             return {selectedIds};
 
         })
-        console.log(this.state.selectedIds)
     }
+}
+
+const mapDispatchToProps = {
+    setSelectedCardId
 }
 
 const mapStateToProps = state => {
@@ -47,4 +53,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(PlayerDeck);
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerDeck);
