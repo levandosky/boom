@@ -1,5 +1,5 @@
 import uuid from 'uuid/v1';
-import {findKey, mapValues, values} from 'lodash';
+import {findKey, mapValues, values, findIndex} from 'lodash';
 
 import {cards} from './cards';
 
@@ -80,10 +80,6 @@ class Game {
     }
 
     getPlayer(user) {
-        console.log('user: ');
-        console.log(user);
-        console.log('players: ');
-        console.log(gameObject.players);
         const key = findKey(gameObject.players, {sessionId: user.id})
         return gameObject.players[key];
     }
@@ -92,6 +88,12 @@ class Game {
         const player = this.getPlayer(user);
         const card = gameObject.deck.pop();
         player.hand.push(card);
+    }
+
+    playCard(user, cardId) {
+        const player = this.getPlayer(user);
+        const cardIndex = findIndex(player.hand, {id: cardId});
+        return player.hand.slice(cardIndex, 1)
     }
 }
 

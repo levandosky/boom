@@ -2,6 +2,7 @@ import Game from '../game';
 
 const SERVER_LOGIN = 'SERVER/LOGIN';
 const SERVER_GET_CARD = 'SERVER/GET_CARD';
+const SERVER_PLAY_CARD = 'SERVER/PLAY_CARD';
 
 
 const usersActions = {
@@ -45,6 +46,16 @@ const usersActions = {
             }
         });
 
+    },
+    [SERVER_PLAY_CARD]: (all, user, action) => {
+        const playedCard = Game.playCard(user, action.payload);
+
+        all.emit('action', {
+            type: 'CARD_PLAYED',
+            payload: {
+                card: playedCard
+            }
+        })
     }
 
 }
