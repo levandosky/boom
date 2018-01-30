@@ -2,8 +2,10 @@ import {createAction, handleActions} from 'redux-actions';
 
 
 const ADD_CARD = 'ADD_CARD';
+const CARD_PLAYED = 'CARD_PLAYED';
 
 export const addCard = createAction(ADD_CARD);
+export const cardPlayedAction = createAction(CARD_PLAYED);
 
 const initialState = {
     usedCards: [
@@ -18,6 +20,12 @@ export default handleActions({
         console.log(action);
         const newArray = state.usedCards.slice();
         newArray.push(action.payload)
+        return Object.assign({}, state, {usedCards: newArray});
+    },
+    [CARD_PLAYED]: (state, action) => {
+        console.log(action);
+        const newArray = state.usedCards.slice();
+        newArray.push(action.payload.card)
         return Object.assign({}, state, {usedCards: newArray});
     }
 }, initialState);
