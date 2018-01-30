@@ -94,7 +94,8 @@ class Game {
     getNextPlayer(sessionId){
         const key = findKey(gameObject.players, {sessionId})
         const keys = Object.keys(gameObject.players)
-        return gameObject.players[key];
+        const nextIndex = ((keys.sort().indexOf(key))%(key.length))+1
+        return gameObject.players[keys[nextIndex]];
     }
 
     getCard(user) {
