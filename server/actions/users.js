@@ -34,10 +34,11 @@ const usersActions = {
         Game.getCard(user);
         const player = Game.getPlayer(user);
 
-        if (Game.getMovesToDo() === 1) {
-            player.isActive = false;
-            Game.getNextPlayer(user.id).isActive = true;
-        }
+        // if (Game.getMovesToDo() === 1) {
+        //     player.isActive = false;
+        //     Game.getNextPlayer(user.id).isActive = true;
+        //     console.log(user.id)
+        // }
 
         user.emit('action', {
             type: 'SET_USER',

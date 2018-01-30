@@ -72,7 +72,7 @@ class Game {
                 name: newPlayer.name,
                 id: id,
                 hand: this.createPlayerDeck(),
-                isActive
+                isActive: true
             }
         }
 
