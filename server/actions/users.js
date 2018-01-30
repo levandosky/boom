@@ -56,12 +56,20 @@ const usersActions = {
 
     },
     [SERVER_PLAY_CARD]: (all, user, action) => {
-        const playedCard = Game.playCard(user, action.payload);
+        const playedCardArray = Game.playCard(user, action.payload);
+        const player = Game.getPlayer(user);
+
+        user.emit('action', {
+            type: 'SET_USER',
+            payload: Object.assign({
+                logged: true
+            }, player)
+        });
 
         all.emit('action', {
             type: 'CARD_PLAYED',
             payload: {
-                card: playedCard
+                card: playedCardArray[0]
             }
         })
     }

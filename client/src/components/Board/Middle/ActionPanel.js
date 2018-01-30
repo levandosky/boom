@@ -11,12 +11,12 @@ class ActionPanel extends React.Component {
                     <div
                         className="action-panel-button play-card"
                         onClick={() => {
-                            const cardId = Math.random();
-                            console.log('play card ');
+                            const cardId = this.props.selectedCardId;
+                            console.log('play card ' + cardId);
                             this.props.serverPlayCard(cardId);
                         }}
                     >
-                        Zagraj kartę
+                        Zagraj kartę {this.props.selectedCardId}
                     </div>
                     <div className="action-panel-button  end-turn">
                         Zakończ turę
@@ -27,8 +27,12 @@ class ActionPanel extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => ({
+    selectedCardId: state.game.selectedCardId
+})
+
 const mapDispatchToProps = {
     serverPlayCard
 }
 
-export default connect(null, mapDispatchToProps)(ActionPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(ActionPanel);
