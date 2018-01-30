@@ -13,7 +13,7 @@ export const cardPlayedAction = createAction(CARD_PLAYED);
 
 const initialState = {
     usedCards: [],
-    selectedCardId: 1
+    selectedCardId: null
 }
 
 

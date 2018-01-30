@@ -8,7 +8,7 @@ import {connect} from "react-redux";
 class App extends Component {
     render() {
         return (
-            <div className="App" style={{backgroundColor: '#F8F8F8', height: '100%'}}>
+            <div className="App" style={{ height: '100%'}}>
                 <Route
                     exact
                     path={'/board'}
