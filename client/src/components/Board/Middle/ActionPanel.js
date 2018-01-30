@@ -5,6 +5,7 @@ import {serverPlayCard} from "../../../reducers/UserReducer";
 class ActionPanel extends React.Component {
 
     render() {
+        const {isUserActive} = this.props
         return (
             <div className="container-action-panel active">
                 <div className="action-panel">
@@ -13,7 +14,7 @@ class ActionPanel extends React.Component {
                         onClick={() => {
                             const cardId = this.props.selectedCardId;
                             console.log('play card ' + cardId);
-                            this.props.serverPlayCard(cardId);
+                            isUserActive ? this.props.serverPlayCard(cardId) : null;
                         }}
                     >
                         Zagraj kartę {this.props.selectedCardId}
@@ -28,7 +29,8 @@ class ActionPanel extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    selectedCardId: state.game.selectedCardId
+    selectedCardId: state.game.selectedCardId,
+    isUserActive: state.user.isActive
 })
 
 const mapDispatchToProps = {
