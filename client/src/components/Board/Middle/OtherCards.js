@@ -17,7 +17,7 @@ class OtherCards extends React.Component {
     }
 
     render() {
-        const {deckSize} = this.props
+        const {deckSize, isUserActive} = this.props
         return (
             <div className="container-others-cards">
                 <div className="wrapper-other-cards">
@@ -25,7 +25,7 @@ class OtherCards extends React.Component {
                         className="other-cards"
                         onClick={() => {
                             console.log('get card client')
-                            this.props.serverGetCard();
+                            isUserActive ? this.props.serverGetCard() : null;
                         }}
                     >
                         <Card
@@ -55,7 +55,8 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) => {
     return {
-        deckSize: state.game.deckSize
+        deckSize: state.game.deckSize,
+        isUserActive: state.user.isActive
     };
 }
 

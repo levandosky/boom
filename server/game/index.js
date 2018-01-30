@@ -91,10 +91,13 @@ class Game {
         return gameObject.players[key];
     }
 
-    getNextPlayer(sessionId){
+    getNextPlayer(sessionId) {
         const key = findKey(gameObject.players, {sessionId})
         const keys = Object.keys(gameObject.players)
-        const nextIndex = ((keys.sort().indexOf(key))%(key.length))+1
+        let nextIndex = keys.sort().indexOf(key) + 1
+        if (nextIndex >= keys.length ) {
+            nextIndex = 0;
+        }
         return gameObject.players[keys[nextIndex]];
     }
 
