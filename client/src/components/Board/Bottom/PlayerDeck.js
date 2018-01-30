@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux'
-import Card from "../Middle/Card";
 import './Bottom.css'
+import BottomCard from "./BottomCard";
 
 class PlayerDeck extends React.Component {
 
@@ -17,10 +17,10 @@ class PlayerDeck extends React.Component {
         )
     }
 
-    mapCards = (card) =>
-        <div className='bottomCardContainer' key={card.id}>
-            <Card card={card}/>
-        </div>
+    mapCards = (card) => <BottomCard card={card} key={card.id} selectPlayerCard={this.selectPlayerCard}/>
+
+    // selectPlayerCard = (cardId) = {
+    // }
 }
 
 const mapStateToProps = state => {
