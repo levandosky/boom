@@ -1,7 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux'
 import PlayerDeck from "./PlayerDeck";
-import ActionPanel from "./ActionPanel";
 
 const bottomContainer = {
     width: '100%',
@@ -15,7 +14,6 @@ class Bottom extends React.Component {
         return (
             <div style={bottomContainer}>
                 <PlayerDeck />
-                {/*<ActionPanel />*/}
             </div>
         )
     }

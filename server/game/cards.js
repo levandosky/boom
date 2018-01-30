@@ -138,7 +138,7 @@ export const cards = [
     {
         "category": "Co kryje przyszlość",
         "type": "preview",
-        "description": "Dowódź jednostą specjlaną krolików",
+        "description": "Dowódź jednostką specjlaną krolików",
         "action": "Dyskretnie obejrzyj 3 wierzchnie karty z talii",
         "joke": "Dzwonisz do supportu",
         "id": "25"
