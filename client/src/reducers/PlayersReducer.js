@@ -11,8 +11,8 @@ const initialState = {
 
 
 export default handleActions({
-  [SET_PLAYERS_LIST]: (state, action) => {
-    console.log(action);
-    return Object.assign({}, state, action.payload);
-  }
+    [SET_PLAYERS_LIST]: (state, action) => {
+        console.log(action);
+        return Object.assign({}, state, action.payload);
+    }
 }, initialState);

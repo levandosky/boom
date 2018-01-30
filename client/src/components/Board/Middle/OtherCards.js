@@ -5,7 +5,12 @@ import {serverGetCard} from "../../../reducers/UserReducer";
 
 class OtherCards extends React.Component {
 
+    constructor(props){
+        super(props)
+    }
+
     render() {
+        const {deckSize} = this.props
         return (
             <div className="container-others-cards">
                 <div className="wrapper-other-cards">
@@ -25,7 +30,7 @@ class OtherCards extends React.Component {
                             W TALII POZOSTAŁO
                         </div>
                         <div className="other-cards-number">
-                            33
+                            {deckSize}
                         </div>
                         <div className="other-cards-second-slogan">
                             KART
@@ -41,4 +46,10 @@ const mapDispatchToProps = {
     serverGetCard
 }
 
-export default connect(null, mapDispatchToProps)(OtherCards);
+const mapStateToProps = (state) => {
+    return {
+        deckSize: state.game.deckSize
+    };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(OtherCards);

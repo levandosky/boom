@@ -25,8 +25,10 @@ const usersActions = {
 
         all.emit('action', {
             type: 'SET_DECK_SIZE',
-            payload: Game.getDeckSize()
-        })
+            payload: {
+                deckSize: Game.getDeckSize()
+            }
+        });
     },
     [SERVER_GET_CARD]: (all, user, action) => {
         Game.getCard(user);
@@ -43,6 +45,12 @@ const usersActions = {
             type: 'SET_PLAYERS_LIST',
             payload: {
                 list: Game.getPlayers()
+            }
+        });
+        all.emit('action', {
+            type: 'SET_DECK_SIZE',
+            payload: {
+                deckSize: Game.getDeckSize()
             }
         });
 

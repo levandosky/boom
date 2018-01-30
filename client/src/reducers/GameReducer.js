@@ -3,6 +3,8 @@ import {createAction, handleActions} from 'redux-actions';
 
 const ADD_CARD = 'ADD_CARD';
 const CARD_PLAYED = 'CARD_PLAYED';
+const SET_DECK_SIZE = 'SET_DECK_SIZE';
+
 
 export const addCard = createAction(ADD_CARD);
 export const cardPlayedAction = createAction(CARD_PLAYED);
@@ -27,5 +29,9 @@ export default handleActions({
         const newArray = state.usedCards.slice();
         newArray.push(action.payload.card)
         return Object.assign({}, state, {usedCards: newArray});
+    },
+    [SET_DECK_SIZE]: (state, action) => {
+        console.log(action);
+        return Object.assign({}, state, action.payload);
     }
 }, initialState);
