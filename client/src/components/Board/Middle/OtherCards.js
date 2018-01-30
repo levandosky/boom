@@ -5,10 +5,6 @@ import {serverGetCard} from "../../../reducers/UserReducer";
 
 class OtherCards extends React.Component {
 
-    constructor(props){
-        super(props)
-    }
-
     render() {
         const {deckSize} = this.props
         return (

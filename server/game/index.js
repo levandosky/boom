@@ -5,7 +5,8 @@ import {cards} from './cards';
 
 const gameObject = {
     players: {},
-    deck: []
+    deck: [],
+    movesToDo: 1
 };
 
 
@@ -21,6 +22,10 @@ class Game {
 
     getDeckSize() {
         return gameObject.deck.length;
+    }
+
+    getMovesToDo() {
+        return gameObject.movesToDo
     }
 
     createPlayerDeck() {
@@ -57,6 +62,7 @@ class Game {
     addPlayer(newPlayer) {
         const playerId = findKey(gameObject.players, {name: newPlayer.name});
         const id = playerId || uuid();
+        const isActive = Object.keys(gameObject.players).length === 0;
 
         if (playerId) {
             gameObject.players[id].sessionId = newPlayer.sessionId
@@ -65,7 +71,8 @@ class Game {
                 sessionId: newPlayer.sessionId,
                 name: newPlayer.name,
                 id: id,
-                hand: this.createPlayerDeck()
+                hand: this.createPlayerDeck(),
+                isActive
             }
         }
 
@@ -74,13 +81,19 @@ class Game {
 
     getPlayers() {
         return values(mapValues(gameObject.players, (player) => {
-            const {id, name, hand} = player
-            return {id, name, numberOfCards: hand.length};
+            const {id, name, hand, isActive} = player
+            return {id, name, numberOfCards: hand.length, isActive};
         }));
     }
 
     getPlayer(user) {
         const key = findKey(gameObject.players, {sessionId: user.id})
+        return gameObject.players[key];
+    }
+
+    getNextPlayer(sessionId){
+        const key = findKey(gameObject.players, {sessionId})
+        const keys = Object.keys(gameObject.players)
         return gameObject.players[key];
     }
 
